@@ -28,4 +28,9 @@ function onFilterSongs(val, done) {
     filteredSongs.value = fuse.search(val);
   });
 }
-export { onFilterSongs };
+
+function searchFilter(val) {
+  if (val?.length < 2) filteredSongs.value = songs;
+  else filteredSongs.value = fuse.search(val);
+}
+export { onFilterSongs, searchFilter };
