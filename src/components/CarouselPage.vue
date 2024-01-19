@@ -20,7 +20,16 @@
           class="text-center"
           style="padding: 0 4px"
         >
-          <q-scroll-area class="fit">
+          <q-scroll-area
+            class="fit"
+            :thumb-style="{
+              background: 'transparent'
+
+            }"
+            :bar-style="{
+              background: 'transparent'
+            }"
+          >
             <h5
               class="q-my-none"
               style="padding-top: 2vh"
