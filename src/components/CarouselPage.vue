@@ -15,7 +15,8 @@
       >
         <q-carousel-slide
           :name="index"
-          class="text-center q-pa-none"
+          class="text-center"
+          style="padding: 0 4px"
         >
           <q-scroll-area class="fit">
             <h5
@@ -24,7 +25,7 @@
             >
               {{ item.title }}
             </h5>
-            <pre style="max-width: 100%;
+            <pre style="max-width: calc(100vw - 2px);
         overflow: hidden; text-overflow: clip;
         hyphens: auto; text-wrap: wrap;
         ">{{ item.lyrics }}
