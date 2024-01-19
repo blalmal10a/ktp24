@@ -271,7 +271,7 @@ const leftDrawerOpen = ref(false);
 const loadingInstall = ref(false)
 
 onBeforeMount(() => {
-  let theme = localStorage.getItem('theme')
+  let theme = q.localStorage.getItem('theme')
   if (theme) q.dark.set(theme == 'dark')
 })
 window.addEventListener('appinstalled', (event) => {
