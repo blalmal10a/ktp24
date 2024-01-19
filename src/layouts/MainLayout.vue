@@ -184,7 +184,10 @@
               >
                 <q-item
                   clickable
-                  @click="$q.dark.set(true)"
+                  @click="() => {
+                    $q.dark.set(true)
+                    $q.localStorage.set('theme', 'dark')
+                  }"
                 >
                   <q-item-section side>
                     <q-icon
@@ -199,7 +202,12 @@
                 <q-separator></q-separator>
                 <q-item
                   clickable
-                  @click="$q.dark.set(false)"
+                  @click="() => {
+                    $q.dark.set(false)
+                    $q.localStorage.set('theme', 'light')
+                  }
+
+                    "
                 >
                   <q-item-section side>
                     <q-icon
@@ -215,7 +223,7 @@
             </q-btn>
           </div>
           <div class="row q-col-gutter-md">
-            <div>
+            <div class="">
               <q-btn
                 flat
                 dense
@@ -229,7 +237,7 @@
               >
               </q-btn>
             </div>
-            <div>
+            <div class="q-pr-md">
               <q-btn
                 flat
                 dense
@@ -254,7 +262,7 @@
 import { useQuasar } from 'quasar';
 import { onFilterSongs } from 'src/scripts/filter';
 import { filteredSongs, fontSize, songIndex, songs } from 'src/scripts/songs';
-import { onMounted, ref } from 'vue';
+import { onBeforeMount, onMounted, ref } from 'vue';
 
 const q = useQuasar();
 const searchBox = ref(null)
@@ -262,7 +270,10 @@ const showSearch = ref(false);
 const leftDrawerOpen = ref(false);
 const loadingInstall = ref(false)
 
-
+onBeforeMount(() => {
+  let theme = localStorage.getItem('theme')
+  if (theme) q.dark.set(theme == 'dark')
+})
 window.addEventListener('appinstalled', (event) => {
   console.log('PWA was installed successfully');
   q.notify('App is installed successfully. It will be available offline!')
