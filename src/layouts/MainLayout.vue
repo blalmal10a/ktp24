@@ -2,15 +2,6 @@
   <q-layout view="hHh lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <!-- <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        /> -->
-
         <q-toolbar-title
           v-if="!showSearch"
           style="font-size: 14px;"
@@ -22,17 +13,20 @@
           autofocus
           hide-selected
           fill-input
-          :options="songs"
-          v-model="songIndex"
           map-options
           emit-value
+          clearable
           class="full-width"
-          :option-label="val => `${val.number}. ${val.title}`"
+          :options="filteredSongs"
+          v-model="songIndex"
+          :option-label="val => `${val.number ?? val?.item?.number}. ${val.title ?? val.item?.title}`"
           v-if="showSearch"
-          :option-value="val => val.number - 1"
+          :option-value="val => (val.number ?? val.item?.number) - 1"
           @focus="$event.target.select()"
           @update:model-value="showSearch = false"
+          @filter="onFilterSongs"
         ></q-select>
+
         <q-btn
           flat
           dense
@@ -62,9 +56,20 @@
   </q-layout>
 </template>
 <script setup>
-import { songIndex, songs } from 'src/scripts/songs';
-import { ref } from 'vue';
+import { useQuasar } from 'quasar';
+import { onFilterSongs } from 'src/scripts/filter';
+import { filteredSongs, songIndex, songs } from 'src/scripts/songs';
+import { onMounted, ref } from 'vue';
 
+const q = useQuasar();
 const showSearch = ref(false);
 const leftDrawerOpen = ref(false);
+const loadingInstall = ref(false)
+
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('PWA was installed successfully');
+  // Perform any post-installation actions you might need here.
+});
+
 </script>

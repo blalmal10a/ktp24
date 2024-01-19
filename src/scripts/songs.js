@@ -341,4 +341,5 @@ const songs = [
   },
 ];
 
-export { songIndex, songs, selectedSong };
+const filteredSongs = ref(songs);
+export { songIndex, songs, selectedSong, filteredSongs };
