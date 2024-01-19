@@ -6,6 +6,15 @@
           v-if="!showSearch"
           style="font-size: 14px;"
         >
+          <q-btn
+            flat
+            dense
+            round
+            icon="search"
+            aria-label="Menu"
+            @click="onClickSearch"
+          />
+
           KTP Gen. Conf. Hla Bu 2024
         </q-toolbar-title>
         <q-select
@@ -17,6 +26,7 @@
           map-options
           emit-value
           clearable
+          options-selected-class="text-white bg-primary"
           class="full-width"
           :options="filteredSongs"
           v-model="songIndex"
@@ -30,28 +40,61 @@
             } catch (error) {
 
             }
-          }"
+          }
+            "
           @input-value="() => {
             try {
               searchBox?.showPopup()
             } catch (error) {
 
             }
-          }"
+          }
+            "
           @update:model-value="showSearch = false"
           @filter="onFilterSongs"
         ></q-select>
-
         <q-btn
           flat
           dense
           round
-          icon="search"
-          aria-label="Menu"
-          @click="onClickSearch"
-        />
+          icon="more_vert"
+        >
+          <q-menu
+            :offset="[10, 10]"
+            auto-close
+          >
+            <q-item
+              clickable
+              @click="$q.dark.set(true)"
+            >
+              <q-item-section side>
+                <q-icon
+                  name="dark_mode"
+                  :color="$q.dark.isActive ? 'white' : ''"
+                />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label class="q-pl-xs q-pr-md">Dark</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-separator></q-separator>
+            <q-item
+              clickable
+              @click="$q.dark.set(false)"
+            >
+              <q-item-section side>
+                <q-icon
+                  name="light_mode"
+                  color="yellow"
+                />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label class="q-pl-xs q-pr-md">Light</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
       </q-toolbar>
-
     </q-header>
 
     <q-drawer
@@ -60,7 +103,14 @@
       bordered
     >
       <q-list>
-        <q-item style="position: sticky; top: 0; background-color: white; z-index: 2; ">
+        <q-item
+          style="position: sticky; top: 0;  z-index: 2; border-bottom: 1px solid rgb(194, 191, 191);"
+          :class="{
+            'bg-dark text-white': $q.dark.isActive,
+            'bg-white': !$q.dark.isActive,
+          }
+            "
+        >
           <q-item-section side>
             <q-img
               style="height: 50px; width: 50px;"
@@ -71,8 +121,9 @@
             KTP Gen. Conference Hla&nbsp;Bu, 2024
           </q-item-section>
         </q-item>
+
         <template
-          v-for="(item, index) in songs"
+          v-for="( item, index ) in  songs "
           :key="index"
         >
           <q-item
@@ -86,8 +137,6 @@
               {{ item.title }}
             </q-item-section>
           </q-item>
-
-
         </template>
       </q-list>
     </q-drawer>
