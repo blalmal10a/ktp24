@@ -4,7 +4,12 @@
     class="row justify-center"
   >
     <div style="max-width: 100%; margin-top: 2vh; ">
-      <h5 class="q-my-none">{{ !!songIndex ? songIndex + 1 : '' }}. {{ songs[songIndex]?.title }}</h5>
+      <h5 class="q-my-none">{{
+        songIndex == null ? '' : songIndex + 1
+      }}.
+        {{
+          songs[songIndex]?.title
+        }}</h5>
       <pre style="max-width: 100%;
       overflow: hidden; text-overflow: clip; hyphens: auto; text-wrap: wrap;
       ">{{ songs[songIndex]?.lyrics }}
