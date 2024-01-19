@@ -5,10 +5,9 @@
       swipeable
       animated
       arrows
-      height="calc(100svh - 50px)"
+      height="calc(100svh - 104px)"
       class="non-selectable"
     >
-
       <template
         v-for="(item, index) in songs"
         :key="index"
@@ -21,23 +20,18 @@
           <q-scroll-area class="fit">
             <h5
               class="q-my-none"
-              style="padding-top: 2vh;"
+              style="padding-top: 2vh"
             >
               {{ item.title }}
               <div class="justify-center row">
-                <q-separator style="width: 150px;"></q-separator>
+                <q-separator style="width: 150px"></q-separator>
               </div>
             </h5>
 
-            <div
-              class="row justify-center"
-              style="overflow: hidden; width: calc(100vw - 8px);"
-            >
-              <pre style="
-        overflow: hidden; text-overflow: clip;
-        hyphens: auto; text-wrap: wrap;
-        ">{{ item.lyrics }}
-            </pre>
+            <div class="q-mt-md row justify-center">
+              <div :style="`white-space: pre-wrap; max-width: calc(100vw - 50px);font-size: ${fontSize}px; `">
+                {{ item.lyrics }}
+              </div>
             </div>
           </q-scroll-area>
         </q-carousel-slide>
@@ -47,7 +41,6 @@
 </template>
 
 <script setup>
-import { songIndex, songs } from 'src/scripts/songs';
-
+import { fontSize, songIndex, songs } from "src/scripts/songs";
 
 </script>

@@ -1,5 +1,6 @@
 import { ref } from "vue";
 
+const fontSize = ref(15);
 const selectedSong = ref({});
 const songIndex = ref(0);
 const songs = [
@@ -342,4 +343,4 @@ const songs = [
 ];
 
 const filteredSongs = ref(songs);
-export { songIndex, songs, selectedSong, filteredSongs };
+export { songIndex, fontSize, songs, selectedSong, filteredSongs };

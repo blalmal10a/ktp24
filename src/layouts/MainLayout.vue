@@ -1,19 +1,19 @@
 <template>
   <q-layout view="hHh lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
+    <q-header
+      elevated
+      class="row justify-center"
+      :style="$q.screen.width > 1023 ? 'padding-left: 300px' : ''"
+    >
+      <q-toolbar
+        class=""
+        style="max-width: min(100vw, 300px)"
+      >
         <q-toolbar-title
           v-if="!showSearch"
           style="font-size: 15px;"
         >
-          KTP Gen. Conf. Hla Bu 2024 <q-btn
-            flat
-            dense
-            round
-            icon="search"
-            aria-label="Menu"
-            @click="onClickSearch"
-          />
+          KTP Gen. Conf. Hla Bu 2024
         </q-toolbar-title>
         <q-select
           ref="searchBox"
@@ -52,46 +52,15 @@
           @filter="onFilterSongs"
         ></q-select>
         <q-btn
+          v-if="!showSearch"
           flat
           dense
           round
-          icon="more_vert"
-        >
-          <q-menu
-            :offset="[10, 10]"
-            auto-close
-          >
-            <q-item
-              clickable
-              @click="$q.dark.set(true)"
-            >
-              <q-item-section side>
-                <q-icon
-                  name="dark_mode"
-                  :color="$q.dark.isActive ? 'white' : ''"
-                />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label class="q-pl-xs q-pr-md">Dark</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-separator></q-separator>
-            <q-item
-              clickable
-              @click="$q.dark.set(false)"
-            >
-              <q-item-section side>
-                <q-icon
-                  name="light_mode"
-                  color="yellow"
-                />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label class="q-pl-xs q-pr-md">Light</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-menu>
-        </q-btn>
+          icon="search"
+          aria-label="Menu"
+          @click="onClickSearch"
+        />
+        <!-- -->
       </q-toolbar>
     </q-header>
 
@@ -141,7 +110,12 @@
 
     <q-page-container>
       <router-view />
-      <div style="position: fixed; bottom: 0; right:0; ">
+      <!-- <div style="position: fixed; bottom: 0; right:0; width: 100%; display: flex;">
+
+      </div> -->
+    </q-page-container>
+    <q-footer class="non-selectable">
+      <q-toolbar>
         <a
           href="https://github.com/blalmal10a/ktp24"
           target="_blank"
@@ -196,14 +170,90 @@
               d="M32,58C17.663,58,6,46.337,6,32S17.663,6,32,6s26,11.663,26,26S46.337,58,32,58z M32,8 C18.767,8,8,18.767,8,32s10.767,24,24,24s24-10.767,24-24S45.233,8,32,8z"
             ></path>
           </svg></a>
-      </div>
-    </q-page-container>
+        <div class="col  row items-center reverse">
+          <div>
+            <q-btn
+              flat
+              dense
+              round
+              icon="more_vert"
+            >
+              <q-menu
+                :offset="[10, 10]"
+                auto-close
+              >
+                <q-item
+                  clickable
+                  @click="$q.dark.set(true)"
+                >
+                  <q-item-section side>
+                    <q-icon
+                      name="dark_mode"
+                      :color="$q.dark.isActive ? 'white' : ''"
+                    />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="q-pl-xs q-pr-md">Dark</q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-separator></q-separator>
+                <q-item
+                  clickable
+                  @click="$q.dark.set(false)"
+                >
+                  <q-item-section side>
+                    <q-icon
+                      name="light_mode"
+                      color="yellow"
+                    />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="q-pl-xs q-pr-md">Light</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-menu>
+            </q-btn>
+          </div>
+          <div class="row q-col-gutter-md">
+            <div>
+              <q-btn
+                flat
+                dense
+                round
+                size="12px"
+                icon="text_decrease"
+                class="non-selectable"
+                @click="() => {
+                  if (fontSize > 11) fontSize--
+                }"
+              >
+              </q-btn>
+            </div>
+            <div>
+              <q-btn
+                flat
+                dense
+                round
+                size="12px"
+                icon="text_increase"
+                class="non-selectable"
+                @click="() => {
+                  if (fontSize < 20) fontSize++
+                }"
+              >
+              </q-btn>
+            </div>
+          </div>
+        </div>
+
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 <script setup>
 import { useQuasar } from 'quasar';
 import { onFilterSongs } from 'src/scripts/filter';
-import { filteredSongs, songIndex, songs } from 'src/scripts/songs';
+import { filteredSongs, fontSize, songIndex, songs } from 'src/scripts/songs';
 import { onMounted, ref } from 'vue';
 
 const q = useQuasar();
