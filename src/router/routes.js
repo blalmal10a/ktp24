@@ -7,14 +7,6 @@ const routes = [
         path: "",
         component: () => import("pages/IndexPage.vue"),
       },
-      {
-        path: "auth/login",
-        component: () => import("src/pages/LoginPage.vue"),
-      },
-      {
-        path: "auth/register",
-        component: () => import("src/pages/auth/RegisterPage.vue"),
-      },
     ],
   },
 
