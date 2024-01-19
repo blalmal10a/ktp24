@@ -4,6 +4,9 @@
       v-model="songIndex"
       swipeable
       animated
+      transition-next="slide-left"
+      transition-prev="slide-right"
+      transition-duration="500"
       arrows
       height="calc(100svh - 104px)"
       class="non-selectable"
