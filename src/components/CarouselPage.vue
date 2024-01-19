@@ -23,7 +23,9 @@
           <q-scroll-area
             class="fit"
             :thumb-style="{
-              background: 'transparent'
+              background: 'grey',
+              opacity: '0.1',
+              width: '5px'
 
             }"
             :bar-style="{
