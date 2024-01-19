@@ -45,8 +45,35 @@
       bordered
     >
       <q-list>
+        <q-item style="position: sticky; top: 0; background-color: white; z-index: 2; ">
+          <q-item-section side>
+            <q-img
+              style="height: 50px; width: 50px;"
+              src="~/assets/ktp-logo.png"
+            ></q-img>
+          </q-item-section>
+          <q-item-section style="font-size: 17px;">
+            KTP Gen. Conference Hla&nbsp;Bu, 2024
+          </q-item-section>
+        </q-item>
+        <template
+          v-for="(item, index) in songs"
+          :key="index"
+        >
+          <q-item
+            clickable
+            @click="songIndex = index"
+          >
+            <q-item-section side>
+              {{ item.number + 1 }}
+            </q-item-section>
+            <q-item-section>
+              {{ item.title }}
+            </q-item-section>
+          </q-item>
 
-        <!--  -->
+
+        </template>
       </q-list>
     </q-drawer>
 
