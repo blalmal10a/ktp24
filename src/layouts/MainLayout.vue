@@ -65,7 +65,7 @@
             @click="songIndex = index"
           >
             <q-item-section side>
-              {{ item.number + 1 }}
+              {{ item.number }}
             </q-item-section>
             <q-item-section>
               {{ item.title }}
