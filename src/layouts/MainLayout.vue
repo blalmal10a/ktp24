@@ -4,9 +4,9 @@
       <q-toolbar>
         <q-toolbar-title
           v-if="!showSearch"
-          style="font-size: 14px;"
+          style="font-size: 15px;"
         >
-          <q-btn
+          KTP Gen. Conf. Hla Bu 2024 <q-btn
             flat
             dense
             round
@@ -14,8 +14,6 @@
             aria-label="Menu"
             @click="onClickSearch"
           />
-
-          KTP Gen. Conf. Hla Bu 2024
         </q-toolbar-title>
         <q-select
           ref="searchBox"

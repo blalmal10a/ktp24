@@ -24,12 +24,21 @@
               style="padding-top: 2vh;"
             >
               {{ item.title }}
+              <div class="justify-center row">
+                <q-separator style="width: 150px;"></q-separator>
+              </div>
             </h5>
-            <pre style="max-width: calc(100vw - 2px);
+
+            <div
+              class="row justify-center"
+              style="overflow: hidden; width: calc(100vw - 8px);"
+            >
+              <pre style="
         overflow: hidden; text-overflow: clip;
         hyphens: auto; text-wrap: wrap;
         ">{{ item.lyrics }}
             </pre>
+            </div>
           </q-scroll-area>
         </q-carousel-slide>
       </template>
