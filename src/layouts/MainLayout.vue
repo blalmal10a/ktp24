@@ -9,6 +9,7 @@
           KTP Gen. Conf. Hla Bu 2024
         </q-toolbar-title>
         <q-select
+          ref="searchBox"
           use-input
           autofocus
           hide-selected
@@ -22,7 +23,20 @@
           :option-label="val => `${val.number ?? val?.item?.number}. ${val.title ?? val.item?.title}`"
           v-if="showSearch"
           :option-value="val => (val.number ?? val.item?.number) - 1"
-          @focus="$event.target.select()"
+          @focus="() => {
+            try {
+              $event.target.select()
+            } catch (error) {
+
+            }
+          }"
+          @input-value="() => {
+            try {
+              searchBox?.showPopup()
+            } catch (error) {
+
+            }
+          }"
           @update:model-value="showSearch = false"
           @filter="onFilterSongs"
         ></q-select>
@@ -33,7 +47,9 @@
           round
           icon="search"
           aria-label="Menu"
-          @click="showSearch = true"
+          @click="() => {
+            showSearch = true
+          }"
         />
       </q-toolbar>
 
@@ -89,6 +105,7 @@ import { filteredSongs, songIndex, songs } from 'src/scripts/songs';
 import { onMounted, ref } from 'vue';
 
 const q = useQuasar();
+const searchBox = ref(null)
 const showSearch = ref(false);
 const leftDrawerOpen = ref(false);
 const loadingInstall = ref(false)
