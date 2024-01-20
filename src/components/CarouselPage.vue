@@ -17,7 +17,9 @@
       >
         <q-carousel-slide
           :name="index"
-          class="text-center"
+          :class="{
+            'text-center': isTextCenter,
+          }"
           style="padding: 0 4px"
         >
           <q-scroll-area
@@ -33,12 +35,21 @@
             }"
           >
             <h5
-              class="q-my-none"
-              style="padding-top: 2vh"
+              class="q-my-none row justify-center"
+              style="padding-top: 2vh; "
             >
-              {{ item.title }}
-              <div class="justify-center row">
-                <q-separator style="width: 150px"></q-separator>
+
+              <div class="">
+                <div class="relative-position text-center">
+                  {{ item.number }}.
+                  {{ item.title }}
+                </div>
+                <div
+                  class="justify-center row "
+                  style="padding-left: 20px;"
+                >
+                  <q-separator style="width: 150px"></q-separator>
+                </div>
               </div>
             </h5>
 
@@ -55,6 +66,6 @@
 </template>
 
 <script setup>
-import { fontSize, songIndex, songs } from "src/scripts/songs";
+import { fontSize, songIndex, songs, isTextCenter } from "src/scripts/songs";
 
 </script>

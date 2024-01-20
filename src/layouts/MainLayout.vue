@@ -222,7 +222,50 @@
               </q-menu>
             </q-btn>
           </div>
-          <div class="row q-col-gutter-md">
+          <div class="row q-col-gutter-md items-center">
+            <div class="non-selectable">
+              <q-btn-toggle
+                size="sm"
+                v-model="isTextCenter"
+                no-caps
+                rounded
+                unelevated
+                toggle-color="primary"
+                color="primary"
+                text-color="white"
+                toggle-text-color="teal"
+                @update:model-value="(val) => {
+                  if (val)
+                    $q.localStorage.set('align', 1)
+                  else
+                    $q.localStorage.remove('align')
+                }"
+                :options="[
+                  {
+                    label: '',
+                    value: false,
+                    icon: 'format_align_left'
+                  },
+                  {
+                    label: '',
+                    value: true,
+                    icon: 'format_align_center'
+                  }
+                ]"
+              />
+              <!-- <q-btn
+                flat
+                dense
+                round
+                size="12px"
+                :icon="isTextCenter ? 'format_align_left' : 'format_align_center'"
+                class="non-selectable"
+                @click="() => {
+                  isTextCenter = !isTextCenter
+                }"
+              >
+              </q-btn> -->
+            </div>
             <div class="non-selectable">
               <q-btn
                 flat
@@ -260,7 +303,7 @@
 <script setup>
 import { useQuasar } from 'quasar';
 import { onFilterSongs } from 'src/scripts/filter';
-import { filteredSongs, fontSize, songIndex, songs } from 'src/scripts/songs';
+import { filteredSongs, fontSize, isTextCenter, songIndex, songs } from 'src/scripts/songs';
 import { onBeforeMount, onMounted, ref } from 'vue';
 
 const q = useQuasar();
@@ -272,6 +315,9 @@ const loadingInstall = ref(false)
 onBeforeMount(() => {
   let theme = q.localStorage.getItem('theme')
   if (theme) q.dark.set(theme == 'dark')
+
+  let align = q.localStorage.getItem('align')
+  if (align) isTextCenter.value = true
 })
 window.addEventListener('appinstalled', (event) => {
   console.log('PWA was installed successfully');

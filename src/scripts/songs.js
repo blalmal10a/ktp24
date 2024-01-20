@@ -1,5 +1,6 @@
 import { ref } from "vue";
 
+const isTextCenter = ref(false);
 const fontSize = ref(15);
 const selectedSong = ref({});
 const songIndex = ref(0);
@@ -343,4 +344,11 @@ const songs = [
 ];
 
 const filteredSongs = ref(songs);
-export { songIndex, fontSize, songs, selectedSong, filteredSongs };
+export {
+  songIndex,
+  fontSize,
+  songs,
+  selectedSong,
+  filteredSongs,
+  isTextCenter,
+};
