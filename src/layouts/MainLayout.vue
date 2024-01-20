@@ -223,7 +223,7 @@
             </q-btn>
           </div>
           <div class="row q-col-gutter-md">
-            <div class="">
+            <div class="non-selectable">
               <q-btn
                 flat
                 dense
@@ -237,7 +237,7 @@
               >
               </q-btn>
             </div>
-            <div class="q-pr-md">
+            <div class="q-pr-md non-selectable">
               <q-btn
                 flat
                 dense
