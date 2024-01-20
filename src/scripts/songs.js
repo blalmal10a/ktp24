@@ -60,7 +60,7 @@ const songs = [
   },
   {
     number: 10,
-    title: "Thinna luipui",
+    title: "Thihna luipui",
     lyrics:
       "Damlai nite hi kawlah an herliam thin,\nTah leh buaina ten nitin min nang vela;\nLal remruat a ni tuman kan hnial thei lo,\nPathian anchhedawng hringfate kan lo ni e.\n\nAw, thihna luipui kan daikai hma chuan,\n(He buaina) Ram khawharah hian luaithli kan nul thin;\nVansang run nuamah kan chawlh hunah chuan,\nThihna tura anchhia reng a kiang tawh ang.\n\nVanram panna kawng zim kan zawh mek lai hian,\nHringfa tana vawi khat thih a tul si maw;\nKrista nena thihna luipui kan loh chu,\nHlauhawm ber a ni, rapthlak ber a lo ni e.\n\nThihna thlan pawhin a hneh loh Lal Isua,\nThihna hneha tho leh in a nung reng ang;\nZanthim a rala khua a lo var hun chuan,\nHnehtu Lal Isua zarah ka him dawn si a.\n\nNunna, chakna leh hun leh kum ral mahse,\nVanah in ka nei ropuina zam velah;\nLungduh kal hmasate nen kan len hun tur,\nThihna luikam atang hian ka thlir bang thei lo.",
   },
@@ -84,7 +84,7 @@ const songs = [
   },
   {
     number: 14,
-    title: "Min hruai tin",
+    title: "Min hruai thin",
     lyrics:
       "Nun tuihal leh beidawng chau in,\nThlalerah chawlhna ka zawng thin a;\nTuihal rehna ka hmu si lo,\nA tawpah Lalpa hnenah ka kir leh thin.\n\nNun tuihal leh beidawng chau in,\nThlalerah chawlhna ka zawng thin a;\nTuihal rehna ka hmu si lo,\nA tawpah Lalpa hnenah ka kir leh thin.\n\n\nMin hruai thin tiau dup hmunah te,\nLalpa chu ka kawng hruaitu a ni;\nMeialh leh chhumding in min hruai thin,\nHarsatna karah lawmna min pe thin.\n\nThlipui hlauhawm, hling leh suar te,\nHrehawmna tawh chang te awm mahse;\n\nChung lam thlir la, hlau suh ang che,\nChutah Lalpa hmel mawi\nchu a lo hnai thin.\n\n\nMin hruai thin tiaudup hmunah te,\nLalpa chu ka kawng hruaitu a ni;\nMeialh leh chhumding in min hruai thin,\nHarsatna karah lawmna min pe thin.\n\nTawrhna a ni, ringtu nun hi,\nI kawngah chauh chang te awm mahse;\n\nAw, nghak hram la, thim a kiang thin,\nI lungngaih a hnen\nthlen la a lo hnai ang.\n\n\nMin hruai thin tiaudup hmunah te,\nLalpa chu ka kawng hruaitu a ni;\nMeialh leh chhumding in min hruai thin,\nHarsatna karah lawmna min pe thin.\n\nMeialh leh chhumding in min hruai thin,\nHarsatna karah lawmna min pe thin.\n",
   },
@@ -156,7 +156,7 @@ const songs = [
   },
   {
     number: 26,
-    title: "Min hnanghah si a",
+    title: "Min hmangaih si a",
     lyrics:
       "I khawngaih kraws kawng zawh in,\nI rawngbawl lamtluang ka chhui,\nKawng nuam leh hahdam changte pawh awm thin;\nKawng hahthlak leh ralti a,\nMin hruai ni pawh hian in,\nI rinawm zia min hmuh tir leh thin.\n\n\nKa tan i rinawmna, aw! a ropui e,\nEngdang reng hi, aw! ka sawi thei lo;\nI khawngaih lainatna ka dawn hi a ropui e,\nKa hmangaih che min hmangaih si a (2).\n\n\nI khawngaih leh malsawmna,\nLei rohlu ka chan zawng te,\nKa chhiar seng love, aw! a ropui e;\nI thatna ka tan lawmna,\nI khawngaih ka tan chawlhna,\nTu nen nge ka teh dawn che Lalpa?\n\nHei hi hlan nawn ka duh thin,\nKa nun leh theihna te hi,\nI tan rimtuiah lo chang fo rawh se;\nHmangaih che ka thiam ne'maw,\nI duhzawng tih mai loh chu,\nKa hmangaih che min hmangaih si a.\n",
   },
@@ -306,7 +306,7 @@ const songs = [
   },
   {
     number: 51,
-    title: "Chu luipui ah kan intawk ang",
+    title: "Chu luipuiah kan intawk ang",
     lyrics:
       "Chu luipuiah kan intawk ang,\nA mawi ngei e, a fawn vel e damten,\nMithianghlimte nen zai kan vawr ang,\nChatuan lalthutthleng kiangah.\n\nKan pa lalthutthleng kianga chuan\nNunna tui a luang chamdel;\nAngel varte lenna hmunah,\nTawh leh ni herchhuak ang maw?\n\nChu lui thianghlim mawi takah chuan,\nBawlhhlawh reng a awm tawh lo'ng;\nChawimawina hla mawi chu sain,\nChatuanin kan hlim tawh ang.\n\nChu luipuiah kan intawk ang,\nA mawi ngei e, a fawn vel e damten,\nMithianghlimte nen zai kan vawr ang,\nChatuan lalthutthleng kiangah.\n\nChu luipui mawi kan thlen hun chuan,\nPhurrit reng a awm tawh lo'ng,\nKhawngaihnain ro a rel ang,\nLallukhum kan khum tawh ang.\n\nKrista hmel engmawi tak mai chuan,\nChu luipui mawi chu a en;\nThihna ngam loh mithianghlimten,\nChhandamna hla mawi an sa.\n\nChu luipuiah kan intawk ang,\nA mawi ngei e, a fawn vel e damten,\nMithianghlimte nen zai kan vawr ang,\nChatuan lalthutthleng kiangah.\n\nReiloteah kan thleng thuai dawn,\nRangkachak khawpui hlun chu;\nLawmna chuai lo kan chang ang a,\nThlamuangin kan chawl tawh ang.\n\nChu luipuiah kan intawk ang,\nA mawi ngei e, a fawn vel e damten,\nMithianghlimte nen zai kan vawr ang,\nChatuan lalthutthleng kiangah.",
   },
