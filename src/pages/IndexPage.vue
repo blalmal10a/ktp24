@@ -2,7 +2,7 @@
   <CarouselPage v-if="songIndex !== null" />
   <div
     v-else
-    class="full-width bg-red"
+    class="full-width"
   >
     <div style="position: sticky; top:0;">
       <q-input

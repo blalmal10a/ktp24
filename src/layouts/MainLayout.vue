@@ -52,7 +52,7 @@
           @filter="onFilterSongs"
         ></q-select>
         <q-btn
-          v-if="!showSearch"
+          v-if="!showSearch && songIndex !== null"
           flat
           dense
           round
@@ -69,7 +69,7 @@
       show-if-above
       bordered
     >
-      <q-list>
+      <q-list style="max-height: calc(100vh - 50px);">
         <q-item
           style="position: sticky; top: 0;  z-index: 2; border-bottom: 1px solid rgb(194, 191, 191);"
           :class="{
@@ -253,7 +253,6 @@
             </div>
           </div>
         </div>
-
       </q-toolbar>
     </q-footer>
   </q-layout>
