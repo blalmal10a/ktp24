@@ -219,6 +219,24 @@
                     <q-item-label class="q-pl-xs q-pr-md">Light</q-item-label>
                   </q-item-section>
                 </q-item>
+                <q-separator></q-separator>
+                <q-item
+                  v-if="$q.platform.is.ios"
+                  clickable
+                  @click="() => {
+                    showDownloadInstruction = true
+                  }"
+                >
+                  <q-item-section side>
+                    <q-icon
+                      name="download"
+                      color="secondary"
+                    />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="q-pl-xs q-pr-md">How to install</q-item-label>
+                  </q-item-section>
+                </q-item>
               </q-menu>
             </q-btn>
           </div>
@@ -298,16 +316,54 @@
         </div>
       </q-toolbar>
     </q-footer>
+    <q-dialog
+      v-model="showDownloadInstruction"
+      maximized
+    >
+      <q-card
+        v-if="$q.platform.is.ios"
+        class=""
+      >
+        <q-toolbar class="bg-primary text-white">
+          <q-toolbar-title style="font-size: 17px;">
+            It is <span class="text-red-3 text-bold">required</span> to use Safari Browser
+          </q-toolbar-title>
+          <div class="absolute-top-right q-pa-sm">
+            <q-btn
+              flat
+              dense
+              round
+              v-close-popup
+              icon="close"
+            ></q-btn>
+          </div>
+        </q-toolbar>
+
+        <div
+          class="q-pa-md bg-grey-4"
+          style="height: calc(100vh - 50px); "
+        >
+          <q-img
+            style="height: 100%;border-radius: 50px;"
+            fit="contain"
+            src="~/assets/media/ezgif.com-webp-maker.webp"
+          ></q-img>
+        </div>
+
+      </q-card>
+    </q-dialog>
   </q-layout>
 </template>
 <script setup>
 import { useQuasar } from 'quasar';
+// import { pwaApp } from 'src/scripts/core';
 import { onFilterSongs } from 'src/scripts/filter';
 import { filteredSongs, fontSize, isTextCenter, songIndex, songs } from 'src/scripts/songs';
 import { onBeforeMount, onMounted, ref } from 'vue';
 
 const q = useQuasar();
 const searchBox = ref(null)
+const showDownloadInstruction = ref(false)
 const showSearch = ref(false);
 const leftDrawerOpen = ref(false);
 const loadingInstall = ref(false)
@@ -317,15 +373,24 @@ onBeforeMount(() => {
   if (theme) q.dark.set(theme == 'dark')
 
   let align = q.localStorage.getItem('align')
-  if (align) isTextCenter.value = true
+  if (align) isTextCenter.value = true;
 })
-window.addEventListener('appinstalled', (event) => {
-  console.log('PWA was installed successfully');
-  q.notify('App is installed successfully. It will be available offline!')
-});
+onMounted(() => {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('before install')
+    // e.preventDefault();
+    // pwaApp.deferredPrompt = e;
+  });
+
+  // window.addEventListener('appinstalled', (event) => {
+  //   console.log('PWA was installed successfully');
+  //   q.notify('App is installed successfully. It will be available offline!')
+  // });
+
+})
+
 
 function onClickSearch() {
-
   showSearch.value = true
   setTimeout(() => {
     searchBox.value.showPopup();
