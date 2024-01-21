@@ -1,3 +1,4 @@
+import { Notify } from "quasar";
 import { reactive, ref } from "vue";
 
 const pwaApp = reactive({
@@ -17,6 +18,7 @@ function install() {
       pwaApp.deferredPrompt = null;
     });
   } else {
+    Notify.create("App installation failed");
     //tell user pwa installation is not possible
   }
 }

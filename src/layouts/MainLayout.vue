@@ -237,6 +237,22 @@
                     <q-item-label class="q-pl-xs q-pr-md">How to install</q-item-label>
                   </q-item-section>
                 </q-item>
+
+                <q-item
+                  v-if="!$q.platform.is.ios && pwaApp.deferredPrompt"
+                  clickable
+                  @click="pwaApp.install"
+                >
+                  <q-item-section side>
+                    <q-icon
+                      name="download"
+                      color="secondary"
+                    />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="q-pl-xs q-pr-md">Install App</q-item-label>
+                  </q-item-section>
+                </q-item>
               </q-menu>
             </q-btn>
           </div>
@@ -356,7 +372,7 @@
 </template>
 <script setup>
 import { useQuasar } from 'quasar';
-// import { pwaApp } from 'src/scripts/core';
+import { pwaApp } from 'src/scripts/core';
 import { onFilterSongs } from 'src/scripts/filter';
 import { filteredSongs, fontSize, isTextCenter, songIndex, songs } from 'src/scripts/songs';
 import { onBeforeMount, onMounted, ref } from 'vue';
@@ -379,7 +395,7 @@ onMounted(() => {
   window.addEventListener('beforeinstallprompt', (e) => {
     console.log('before install')
     // e.preventDefault();
-    // pwaApp.deferredPrompt = e;
+    pwaApp.deferredPrompt = e;
   });
 
   // window.addEventListener('appinstalled', (event) => {
