@@ -332,3 +332,9 @@ function onClickSearch() {
   }, 50);
 }
 </script>
+
+<style>
+html {
+  touch-action: none;
+}
+</style>
