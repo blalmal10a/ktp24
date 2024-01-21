@@ -40,7 +40,10 @@
             >
 
               <div class="">
-                <div class="relative-position text-center">
+                <div
+                  class="relative-position text-center text-uppercase"
+                  style="font-size: 20px;"
+                >
                   <div> {{ item.number }}.
                     {{ item.title }}</div>
                   <div
@@ -58,7 +61,7 @@
               </div>
             </h5>
 
-            <div class="q-mt-md row justify-center">
+            <div class="q-mt-md row justify-center q-pb-md">
               <div :style="`white-space: pre-wrap; max-width: calc(100vw - 50px);font-size: ${fontSize}px; `">
                 {{ item.lyrics }}
               </div>
