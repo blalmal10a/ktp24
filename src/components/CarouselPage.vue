@@ -41,15 +41,20 @@
 
               <div class="">
                 <div class="relative-position text-center">
-                  {{ item.number }}.
-                  {{ item.title }}
+                  <div> {{ item.number }}.
+                    {{ item.title }}</div>
+                  <div
+                    class="title-bottom"
+                    style="height:1.5px"
+                  ></div>
+                  <!-- style="border-top: 1px solid rgb(225, 224, 224)" -->
                 </div>
-                <div
-                  class="justify-center row "
-                  style="padding-left: 20px;"
+                <!-- <div
+                  class=" row "
+                  style="padding-left: -20px;"
                 >
-                  <q-separator style="width: 150px"></q-separator>
-                </div>
+                  <q-separator style="width: 70px"></q-separator>
+                </div> -->
               </div>
             </h5>
 
@@ -69,3 +74,12 @@
 import { fontSize, songIndex, songs, isTextCenter } from "src/scripts/songs";
 
 </script>
+<style>
+.title-bottom {
+  background: rgb(34, 193, 195);
+  background: -moz-linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(122, 191, 135, 0.27758861940298507) 40%, rgba(253, 187, 45, 0) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(122, 191, 135, 0.27758861940298507) 40%, rgba(253, 187, 45, 0) 100%);
+  background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(122, 191, 135, 0.27758861940298507) 40%, rgba(253, 187, 45, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3", endColorstr="#fdbb2d", GradientType=1);
+}
+</style>
