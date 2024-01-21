@@ -20,7 +20,7 @@
     >
       <q-item
         clickable
-        @click="songIndex = index"
+        @click="songIndex = `${item.number ?? item.item.number}` - 1"
       >
         <q-item-section side>
           {{ item.number ?? item?.item?.number }}
