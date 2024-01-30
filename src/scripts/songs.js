@@ -22,7 +22,7 @@ const songs = [
   {
     number: 3,
     title: "Pathian Hmangaihna",
-    composer: 'T.Laldintluanga',
+    composer: 'T. Laldintluanga',
     lyrics:
       "Ka chhut nawn fo thin Pathian hmangaihna hi,\nZing, chhun, zan, englai pawn a hnai reng;\nKa chakloh ber lai pawn min ensan lo,\nMin hmangaih, min thlahthlam ve ngai lo.\n\nA chuai ve lo, a thar zel thin,\nA chul thei lo Pathian hmangaihna thu hi;\nMin hruaina chanchin ngaihnawm hi ziak dawn ila,\nKa hun leh theihna te hian a tlin lovang.\n\nHmangaihna sang ber Pathian hmangaihna chuan,\nLal Isua fa mal neihchhun min pe;\nMidang tan ka thiltih tlem zia chhut hian,\nKa hmangaih nep zia ka hmuchiang thin.\n\nKa damchhung zawng hian ka theihna tlem tal in,\nLalpa chu fak mai tur ka lo ni;\nMisual kei rawngbawltuah min thlang hi,\nA hmangaih ropui zia ti chiangtu.\n",
   },
@@ -37,7 +37,7 @@ const songs = [
   {
     number: 5,
     title: "Kan zinkawngah",
-    composer: 'T.Laldintluanga',
+    composer: 'T. Laldintluanga',
     lyrics:
       "Kan zinkawngah hian Lalpa min hruai la,\nTuifawnten min chim kan pil thuai dawn e;\nI lam kan lo hawi khua kan tlai hma hian,\nLo hnai rawh, aw chhandamtu.\n\nChhandamtu min hruai rawh kan zinkawngah hian,\nThli leh ruah, tuifawnten min chim reng e;\nKan dinna lungpui nghing ve ngai lo chuan,\nVan thlen thlengin min kai ang che.\n\nKhawvelin min au ding leh vei lamah,\nHmuhsitna au thawmten min rawn thawng a;\nHarsatna kara kan mittui far hi,\nLawmna hla an chang ngei ang.\n\nDamchhung ni chhiar dan min zirtir ang che,\nI van chanchin khi min hrilh nawn fo la;\nZinkawng thui tak hi nang tel lo chuanin,\nKan zuam lo, min hruai ang che.",
   },
@@ -171,7 +171,7 @@ const songs = [
   {
     number: 24,
     title: "Lawmna tlang",
-    composer: 'P.C Lalneihtluanga',
+    composer: 'P.C. Lalneihtluanga',
     lyrics:
       "Lalpa, nangin min hria, ka nun chhungril zawng nen,\nKa hun pumin min hruai, chhinchhiahna mak tak nen;\nMin hriatrengna hi ka tan a va hlu em,\nChauh chang awm thin mahse, Lalpa ka zui ang che.\n\nKa Lal leh ka Pathian awm reng i lo ni e,\nTunge hrilhfiah zo ang le?\nMihring finna hian a chhui phal mawlh si lo,\nFak tawk theih che ka nuam, hei hi ka duhsam ber.\n\nKa tan i remruatah lungawi ka tum ngai lo,\nVuina hlira khatin duh tin ka dil thin che;\nMahse, nangin min hria, ka mamawh chauh min pe,\nLungawina tlang thawveng boruak min hip tir thin.\n\nHarsat, mangan, buaina, hrehawmnaten min bawm,\nDamchhung khawsak lungkham vangin ka rum fo thin;\nLungngaia ka awmin Lalpa'n min ngaihtuah thin,\nTahna ruam atangin lawmna tlangah min lawn tir.\n",
   },
@@ -185,7 +185,7 @@ const songs = [
   {
     number: 26,
     title: "Min hmangaih si a",
-    composer: 'C.Lalzarmawia',
+    composer: 'C. Lalzarmawia',
     lyrics:
       "I khawngaih kraws kawng zawh in,\nI rawngbawl lamtluang ka chhui,\nKawng nuam leh hahdam changte pawh awm thin;\nKawng hahthlak leh ralti a,\nMin hruai ni pawh hian in,\nI rinawm zia min hmuh tir leh thin.\n\n\nKa tan i rinawmna, aw! a ropui e,\nEngdang reng hi, aw! ka sawi thei lo;\nI khawngaih lainatna ka dawn hi a ropui e,\nKa hmangaih che min hmangaih si a (2).\n\n\nI khawngaih leh malsawmna,\nLei rohlu ka chan zawng te,\nKa chhiar seng love, aw! a ropui e;\nI thatna ka tan lawmna,\nI khawngaih ka tan chawlhna,\nTu nen nge ka teh dawn che Lalpa?\n\nHei hi hlan nawn ka duh thin,\nKa nun leh theihna te hi,\nI tan rimtuiah lo chang fo rawh se;\nHmangaih che ka thiam ne'maw,\nI duhzawng tih mai loh chu,\nKa hmangaih che min hmangaih si a.\n",
   },
