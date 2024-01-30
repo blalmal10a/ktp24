@@ -39,28 +39,32 @@
               style="padding-top: 2vh; "
             >
 
-              <div class="">
+              <div
+                class="relative-position text-center text-uppercase"
+                style="font-size: 20px;"
+              >
+                <div> {{ item.number }}.
+                  {{ item.title }}</div>
                 <div
-                  class="relative-position text-center text-uppercase"
-                  style="font-size: 20px;"
-                >
-                  <div> {{ item.number }}.
-                    {{ item.title }}</div>
-                  <div
-                    class="title-bottom"
-                    style="height:1.5px"
-                  ></div>
-                  <!-- style="border-top: 1px solid rgb(225, 224, 224)" -->
-                </div>
-                <!-- <div
-                  class=" row "
-                  style="padding-left: -20px;"
-                >
-                  <q-separator style="width: 70px"></q-separator>
-                </div> -->
-              </div>
-            </h5>
+                  class="title-bottom"
+                  style="height:1.5px"
+                ></div>
 
+              </div>
+
+
+            </h5>
+            <div class="row justify-center">
+              <!-- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; -->
+              <div
+                style="width: min(300px, 90vw);
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                "
+                class="text-right text-italic"
+              >
+                - {{ item.composer }}
+              </div>
+            </div>
             <div class="q-mt-md row justify-center q-pb-md">
               <div :style="`white-space: pre-wrap; max-width: calc(100vw - 50px);font-size: ${fontSize}px; `">
                 {{ item.lyrics }}
