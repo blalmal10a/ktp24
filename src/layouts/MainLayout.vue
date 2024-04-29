@@ -180,6 +180,7 @@
             </path>
           </svg></a>
         <q-item
+          v-if="$q.screen.width > 1023"
           class="q-ml-md"
           clickable
           target="_blank"
@@ -190,6 +191,7 @@
           </q-item-section>
         </q-item>
         <q-item
+          v-if="$q.screen.width > 1023"
           clickable
           target="_blank"
           href="/privacy.html"
