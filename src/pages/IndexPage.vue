@@ -1,5 +1,5 @@
 <template>
-  <CarouselPage v-if="songIndex !== null" />
+  <CarouselPage v-if="!showSearch && songIndex !== null" />
   <div
     v-else
     class="full-width"
@@ -20,7 +20,11 @@
     >
       <q-item
         clickable
-        @click="songIndex = `${item.number ?? item.item.number}` - 1"
+        @click="() => {
+          songIndex = `${item.number ?? item.item.number}` - 1;
+          showSearch = false;
+
+        }"
       >
         <q-item-section side>
           {{ item.number ?? item?.item?.number }}
@@ -35,5 +39,6 @@
 <script setup>
 import CarouselPage from 'src/components/CarouselPage.vue';
 import { searchFilter } from 'src/scripts/filter';
+import { showSearch } from 'src/scripts/layout';
 import { filteredSongs, songIndex } from 'src/scripts/songs';
 </script>

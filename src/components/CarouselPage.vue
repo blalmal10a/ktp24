@@ -8,9 +8,10 @@
       transition-prev="slide-right"
       transition-duration="500"
       arrows
-      height="calc(100svh - 104px)"
+      style="height: calc(100svh - 55px);"
       class="non-selectable"
     >
+      <!-- height="calc(100svh - 104px)" -->
       <template
         v-for="(item, index) in songs"
         :key="index"
@@ -74,11 +75,65 @@
         </q-carousel-slide>
       </template>
     </q-carousel>
+    <div
+      style="position: fixed; z-index: 2; bottom: 50px; right: 0; "
+      class="q-pa-sm"
+    >
+      <q-select
+        v-if="showSearch"
+        ref="searchBox"
+        use-input
+        autofocus
+        hide-selected
+        fill-input
+        map-options
+        emit-value
+        clearable
+        options-selected-class="text-white bg-primary"
+        class="full-width"
+        :options="filteredSongs"
+        v-model="songIndex"
+        :option-label="val => `${val.number ?? val?.item?.number}. ${val.title ?? val.item?.title}`"
+        :option-value="val => (val.number ?? val.item?.number) - 1"
+        @blur="showSearch = false;"
+        @focus="() => {
+          try {
+            $event.target.select()
+          } catch (error) {
+
+          }
+        }
+          "
+        @input-value="() => {
+          try {
+            searchBox?.showPopup()
+          } catch (error) {
+
+          }
+        }
+          "
+        @update:model-value="showSearch = false"
+        @filter="onFilterSongs"
+      ></q-select>
+      <q-btn
+        v-if="!showSearch && songIndex !== null"
+        flat
+        dense
+        round
+        icon="search"
+        aria-label="Menu"
+        @click="onClickSearch"
+      />
+    </div>
   </q-page>
 </template>
 
 <script setup>
-import { fontSize, songIndex, songs, isTextCenter } from "src/scripts/songs";
+import { onFilterSongs } from "src/scripts/filter";
+import {
+  searchBox, showDownloadInstruction, showSearch, leftDrawerOpen, onClickSearch
+} from "src/scripts/layout";
+import { fontSize, songIndex, songs, isTextCenter, filteredSongs } from "src/scripts/songs";
 
 </script>
 <style>
