@@ -8,6 +8,7 @@
       body {
         padding: 0 3vw;
         padding-bottom: 20px;
+        padding-top: 70px;
       }
       h1 {
         margin-bottom: 0;
@@ -19,9 +20,43 @@
       p {
         margin-top: 3px;
       }
+
+      /* HEADER STYLES */
+      header {
+        padding: 15px; /* Padding for content */
+        position: fixed; /* Fix the header to the top */
+        top: 0; /* Position it at the top of the page */
+        left: 0; /* Position it at the left of the page */
+        width: 100%; /* Make it full width */
+        display: flex; /* Allow horizontal layout for navigation */
+        justify-content: space-between; /* Space navigation links evenly */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+        border-bottom: 1px solid #dfdfdf;
+      }
+
+      header nav a {
+        color: inherit; /* Inherit text color from header */
+        text-decoration: none; /* Remove underline from links */
+        padding: 10px; /* Padding for each navigation link */
+      }
+
+      header nav a:hover {
+        background-color: #e0e0e0; /* Light gray hover effect */
+        cursor: pointer; /* Change cursor to pointer on hover */
+      }
+      /* END HEADER STYLES */
     </style>
   </head>
   <body>
+    <header>
+      <h1 style="margin-top: 0">CKTP Conference Hla Bu 2024</h1>
+      <nav style="margin-right: 2vw">
+        <a href="/">Home</a>
+        <a href="/privacy.html#">Privacy</a>
+        <a href="/terms.html#">Terms</a>
+      </nav>
+    </header>
+
     <h1>Privacy Policy</h1>
     <p>
       This privacy policy explains how our organization songbook application
