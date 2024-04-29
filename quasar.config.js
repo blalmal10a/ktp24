@@ -53,7 +53,7 @@ module.exports = configure(function (ctx) {
         node: "node16",
       },
 
-      vueRouterMode: "hash", // available values: 'hash', 'history'
+      vueRouterMode: "history", // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -65,9 +65,9 @@ module.exports = configure(function (ctx) {
       env: {
         API_URL: ctx.dev //
           ? //
-            "http://localhost:24102/api" //
+          "http://localhost:24102/api" //
           : //
-            "/api",
+          "/api",
       },
       // rawDefine: {}
       // ignorePublicFolder: true,
