@@ -1,12 +1,18 @@
 <template>
-  <q-layout view="hHh lpr lFf">
-    <q-header
+  <q-layout view="lHh lpr lFf">
+    <!-- <q-header v-if="$q.screen.width > 1023">
+      <q-toolbar class="">
+        <q-space />
+        <q-item>asdf</q-item>
+      </q-toolbar>
+    </q-header> -->
+    <!-- <q-header
       elevated
       class="row"
       :style="$q.screen.width > 1023 ? '' : ''"
     >
 
-      <!-- <q-toolbar class="">
+      <q-toolbar class="">
         <div style="width: 300px;">asdf</div>
         <div class="justify-center col row">
           <q-toolbar-title
@@ -62,8 +68,8 @@
           />
 
         </div>
-      </q-toolbar> -->
-    </q-header>
+      </q-toolbar>
+    </q-header> -->
 
     <q-drawer
       v-model="leftDrawerOpen"
@@ -173,6 +179,26 @@
             >
             </path>
           </svg></a>
+        <q-item
+          class="q-ml-md"
+          clickable
+          target="_blank"
+          href="/terms.html"
+        >
+          <q-item-section>
+            Terms
+          </q-item-section>
+        </q-item>
+        <q-item
+          clickable
+          target="_blank"
+          href="/privacy.html"
+        >
+          <q-item-section>
+            Privacy
+          </q-item-section>
+        </q-item>
+        <!-- <div class="col-auto q-pl-md">terms</div> -->
         <div class="col  row items-center reverse">
           <div>
             <q-btn
@@ -187,7 +213,6 @@
               >
                 <q-item
                   dense
-                  target="_blank"
                   href="/terms.html"
                 >
                   <q-item-section side>
