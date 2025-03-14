@@ -1,0 +1,13 @@
+{
+  "name": "conference-hla-bu-2024",
+  "version": "0.0.1",
+  "description": "Kristian Ṭhalai Pawl, General Conference 2024 - Hla Bu",
+  "author": "ys-grouse <malsawma7777@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/app": "^5.0.0",
+    "@capacitor/cli": "^5.0.0",
+    "@capacitor/core": "^5.0.0"
+  }
+}
