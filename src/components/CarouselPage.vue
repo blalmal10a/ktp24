@@ -1,80 +1,85 @@
 <template>
-  <q-page>
-    <q-carousel
-      v-model="songIndex"
-      swipeable
-      animated
-      transition-next="slide-left"
-      transition-prev="slide-right"
-      transition-duration="500"
-      arrows
-      style="height: calc(100svh - 55px);"
-      class="non-selectable"
+  <q-page class="bg-blue">
+    <q-card
+      flat
+      square
+      style="height: calc(100dvh - 50px);"
     >
-      <!-- height="calc(100svh - 104px)" -->
-      <template
-        v-for="(item, index) in songs"
-        :key="index"
+      <q-carousel
+        v-model="songIndex"
+        swipeable
+        animated
+        transition-next="slide-left"
+        transition-prev="slide-right"
+        transition-duration="500"
+        arrows
+        class="non-selectable full-height"
       >
-        <q-carousel-slide
-          :name="index"
-          :class="{
-            'text-center': isTextCenter,
-          }"
-          style="padding: 0 4px"
+        <!-- height="calc(100svh - 104px)" -->
+        <template
+          v-for="(item, index) in songs"
+          :key="index"
         >
-          <q-scroll-area
-            class="fit"
-            :thumb-style="{
-              background: 'grey',
-              opacity: '0.1',
-              width: '5px'
-
+          <q-carousel-slide
+            :name="index"
+            :class="{
+              'text-center': isTextCenter,
             }"
-            :bar-style="{
-              background: 'transparent'
-            }"
+            style="padding: 0 4px"
           >
-            <h5
-              class="q-my-none row justify-center"
-              style="padding-top: 2vh; "
+            <q-scroll-area
+              class="fit"
+              :thumb-style="{
+                background: 'grey',
+                opacity: '0.1',
+                width: '5px'
+
+              }"
+              :bar-style="{
+                background: 'transparent'
+              }"
             >
-
-              <div
-                class="relative-position text-center text-uppercase"
-                style="font-size: 20px;"
+              <h5
+                class="q-my-none row justify-center"
+                style="padding-top: 2vh; "
               >
-                <div> {{ item.number }}.
-                  {{ item.title }}</div>
+
                 <div
-                  class="title-bottom"
-                  style="height:1.5px"
-                ></div>
+                  class="relative-position text-center text-uppercase"
+                  style="font-size: 20px;"
+                >
+                  <div> {{ item.number }}.
+                    {{ item.title }}</div>
+                  <div
+                    class="title-bottom"
+                    style="height:1.5px"
+                  ></div>
 
-              </div>
+                </div>
 
 
-            </h5>
-            <div class="row justify-center">
-              <!-- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; -->
-              <div
-                style="width: min(300px, 90vw);
+              </h5>
+              <div class="row justify-center">
+                <!-- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; -->
+                <div
+                  style="width: min(300px, 90vw);
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 "
-                class="text-right text-italic"
-              >
-                - {{ item.composer }}
+                  class="text-right text-italic"
+                >
+                  - {{ item.composer }}
+                </div>
               </div>
-            </div>
-            <div class="q-mt-md row justify-center q-pb-md">
-              <div :style="`white-space: pre-wrap; max-width: calc(100vw - 50px);font-size: ${fontSize}px; `">
-                {{ item.lyrics }}
+              <div class="q-mt-md row justify-center q-pb-md">
+                <div :style="`white-space: pre-wrap; max-width: calc(100vw - 50px);font-size: ${fontSize}px; `">
+                  {{ item.lyrics }}
+                </div>
               </div>
-            </div>
-          </q-scroll-area>
-        </q-carousel-slide>
-      </template>
-    </q-carousel>
+            </q-scroll-area>
+          </q-carousel-slide>
+        </template>
+      </q-carousel>
+    </q-card>
     <div
       style="position: fixed; z-index: 2; bottom: 50px; right: 0; "
       class="q-pa-sm"
@@ -103,7 +108,7 @@
 
           }
         }
-          "
+        "
         @input-value="() => {
           try {
             searchBox?.showPopup()
@@ -111,7 +116,7 @@
 
           }
         }
-          "
+        "
         @update:model-value="showSearch = false"
         @filter="onFilterSongs"
       ></q-select>
