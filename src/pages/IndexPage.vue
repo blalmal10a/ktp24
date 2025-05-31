@@ -3,9 +3,9 @@
   <div
     v-else
     class="full-width"
-    style="height: 100%;"
+    style="height: 100%; overflow: auto; padding-top: 56px;"
   >
-    <div style="position: sticky; top:0; backdrop-filter: blur(10px); z-index: 99;">
+    <div style="position: fixed; width: 100%; top:0; backdrop-filter: blur(10px); z-index: 99;">
       <q-input
         autofocus
         @update:model-value="searchFilter"
