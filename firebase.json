@@ -2,8 +2,16 @@
   "hosting": {
     "public": "dist/pwa",
     "site": "ktp24",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "rewrites": [
+      {
+        "source": "/ads.txt",
+        "destination": "/ads.txt"
+      },
       {
         "source": "**",
         "destination": "/index.html"
