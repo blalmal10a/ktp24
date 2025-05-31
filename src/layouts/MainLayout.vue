@@ -97,7 +97,7 @@
         </q-item>
 
         <template
-          v-for="( item, index ) in songs "
+          v-for="(item, index) in songs"
           :key="index"
         >
           <q-item
@@ -123,7 +123,7 @@
     </q-page-container>
     <q-footer class="non-selectable">
       <q-toolbar>
-        <a
+        <!-- <a
           href="https://github.com/blalmal10a/ktp24"
           target="_blank"
         > <svg
@@ -178,7 +178,7 @@
               d="M32,58C17.663,58,6,46.337,6,32S17.663,6,32,6s26,11.663,26,26S46.337,58,32,58z M32,8 C18.767,8,8,18.767,8,32s10.767,24,24,24s24-10.767,24-24S45.233,8,32,8z"
             >
             </path>
-          </svg></a>
+          </svg></a> -->
         <q-item
           v-if="$q.screen.width > 1023"
           class="q-ml-md"
@@ -264,7 +264,7 @@
                     $q.localStorage.set('theme', 'light')
                   }
 
-                    "
+                  "
                 >
                   <q-item-section side>
                     <q-icon
