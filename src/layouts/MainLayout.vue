@@ -183,8 +183,7 @@
           v-if="$q.screen.width > 1023"
           class="q-ml-md"
           clickable
-          target="_blank"
-          href="/terms.html"
+          href="/terms"
         >
           <q-item-section>
             Terms
@@ -193,8 +192,7 @@
         <q-item
           v-if="$q.screen.width > 1023"
           clickable
-          target="_blank"
-          href="/privacy.html"
+          href="/privacy"
         >
           <q-item-section>
             Privacy
@@ -215,7 +213,7 @@
               >
                 <q-item
                   dense
-                  href="/terms.html"
+                  href="/terms"
                 >
                   <q-item-section side>
                     <q-icon
@@ -228,8 +226,7 @@
                 <q-separator></q-separator>
                 <q-item
                   dense
-                  target="_blank"
-                  href="/privacy.html"
+                  href="/privacy"
                 >
                   <q-item-section side>
                     <q-icon name="verified_user" />
